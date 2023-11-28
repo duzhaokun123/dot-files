@@ -96,7 +96,7 @@ disabled = false
 style = 'bold green'
 symbol = "sudo"
 format = "[$symbol]($style)"
-disabled = false
+disabled = true
 
 [cmd_duration]
 min_time = 500
