@@ -1,0 +1,109 @@
+format = """
+[ ](fg:#a3aed2 bg:#a3aed2)\
+$os\
+$username\
+[](bg:#6084c9 fg:#a3aed2)\
+$directory\
+[](fg:#6084c9 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260 bg:#212736)\
+$gradle\
+$python\
+$nodejs\
+$rust\
+[](fg:#212736 bg:#1d2230)\
+$time\
+[](fg:#1d2230)\
+$fill\
+$status$cmd_duration\
+\n\
+$character"""
+
+right_format = """
+$sudo$hostname"""
+
+[username]
+show_always = true
+style_user = "bg:#a3aed2 fg:#090c0c"
+style_root = "bg:#a3aed2 fg:#090c0c"
+format = '[$user ]($style)'
+disabled = false
+
+[os]
+style = "bg:#a3aed2 fg:#090c0c"
+disabled = false
+
+[os.symbols]
+Arch = " "
+Windows = "田 "
+
+[directory]
+style = "fg:#e3e5e5 bg:#6084c9"
+format = "[ $path ]($style)"
+truncation_length = 20
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+
+[gradle]
+symbol = "🅶"
+style = "bg:#212736"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[ $symbol ($version)(\($virtualenv\))]($style)'
+
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[ $time ](fg:#a0a9cb bg:#1d2230)]($style)'
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+
+[status]
+style = "bold bright-red"
+format = '[$status|$common_meaning]($style)'
+map_symbol = true
+disabled = false
+
+[sudo]
+style = 'bold green'
+symbol = "sudo"
+format = "[$symbol]($style)"
+disabled = false
+
+[cmd_duration]
+min_time = 500
+format = '[ $duration]($style)'
+
+[fill]
+symbol = ' '
+
+[hostname]
+style = "bold dimmed fg:#a3aed2"
+ssh_only = false
+format = "[ $hostname]($style)"
