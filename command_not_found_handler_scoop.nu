@@ -1,5 +1,5 @@
 $env.command_not_found_handler = { |cmd_name|
-    print $"Command not found: ($cmd_name)"
+    print $"command not found: ($cmd_name)"
     let s = (input "Search by scoop? (it may work slow) (y/N)")
     if $s == "y" or $s == "Y" {
         let r = (scoop search $cmd_name | lines)

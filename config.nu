@@ -451,7 +451,7 @@ $env.config = {
 }
 
 $env.command_not_found_handler = { |cmd_name|
-    $"Command not found: ($cmd_name)"
+    return $"command not found: ($cmd_name)"
 }
 
 alias l = ls
