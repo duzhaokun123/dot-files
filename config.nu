@@ -6,7 +6,7 @@
 # https://www.nushell.sh/book/coloring_and_theming.html
 # And here is the theme collection
 # https://github.com/nushell/nu_scripts/tree/main/themes
-let dark_theme = {
+let defalut_theme = {
     # color for nushell primitives
     separator: white
     leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
@@ -159,7 +159,7 @@ $env.config = {
         vi_normal: underscore # block, underscore, line, blink_block, blink_underscore, blink_line, inherit to skip setting cursor shape (underscore is the default)
     }
 
-    color_config: $dark_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
+    color_config: $defalut_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
     use_grid_icons: true
     footer_mode: "25" # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
@@ -167,7 +167,7 @@ $env.config = {
     use_ansi_coloring: true
     bracketed_paste: true # enable bracketed paste, currently useless on windows
     edit_mode: emacs # emacs, vi
-    shell_integration: false # enables terminal shell integration. Off by default, as some terminals have issues with this.
+    shell_integration: true # enables terminal shell integration. Off by default, as some terminals have issues with this.
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
     use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this
 
@@ -178,7 +178,9 @@ $env.config = {
             PWD: [{|before, after| null }] # run if the PWD environment is different since the last repl input
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
-        command_not_found: { null } # return an error message when a command is not found
+        command_not_found: { |cmd_name|
+            do $env.command_not_found_handler $cmd_name
+        } # run when a command is not found
     }
 
     menus: [
@@ -448,9 +450,16 @@ $env.config = {
     ]
 }
 
+$env.command_not_found_handler = { |cmd_name|
+    $"Command not found: ($cmd_name)"
+}
+
 alias l = ls
 source ~/.cache/carapace/init.nu
 use ~/.cache/starship/init.nu
 
 # custom config
 source ($nu.default-config-dir | path join custom.nu)
+
+# command not found handler
+source ($nu.default-config-dir | path join command_not_found_handler.nu)
