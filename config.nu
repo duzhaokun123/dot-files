@@ -451,7 +451,11 @@ $env.config = {
 }
 
 $env.command_not_found_handler = { |cmd_name|
-    return $"command not found: ($cmd_name)"
+    return $"command not found ($cmd_name | style $env.config.color_config.shape_external)"
+}
+
+def style [style] {
+    return $"(ansi $style)($in)(ansi reset)"
 }
 
 alias l = ls

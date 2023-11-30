@@ -5,6 +5,6 @@ $env.command_not_found_handler = { |cmd_name|
     } else {
         let pkgs = $r | lines | parse --regex '(?P<package>\S*)\s*(?P<version>\S*)\s*(?P<binarie>[\S\s]*)' | table
         # let pkgs = $r
-        return $"($cmd_name) may be found in the following packages\n($pkgs)"
+        return $"($cmd_name | style $env.config.color_config.shape_external) may be found in the following packages\n($pkgs)"
     }
 }
