@@ -88,7 +88,7 @@ error_symbol = '[❯](bold red)'
 
 [status]
 style = "bold bright-red"
-format = '[$status|$common_meaning]($style)'
+format = '[$status(|$common_meaning)]($style)'
 map_symbol = true
 disabled = false
 
