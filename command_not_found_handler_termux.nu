@@ -5,7 +5,7 @@ $env.command_not_found_handler = { |cmd_name|
         # let pkgs = $r | skip 1 | split row " or " | str trim | str join "\n"
         return $"($cmd_name) may be found in the following packages\n($pkgs)"
     } else if ($r.0 | str starts-with "No") {
-        let pkgs = $r | skip 1 | append '' | str join ' form the  r;' | split row ';' | str trim | parse --regex 'Command (?P<command>\S*) in package (?P<package>\S*) from the (?P<repo>\S*) r' | table
+        let pkgs = $r | skip 1 | append '' | str join ' from the  r;' | split row ';' | str trim | parse --regex 'Command (?P<command>\S*) in package (?P<package>\S*) from the (?P<repo>\S*) r' | table
         # let pkgs = $r | skip 1 | str trim | str join "\n"
         return $"($cmd_name) not found, did you mean\n($pkgs)"
     } else {
