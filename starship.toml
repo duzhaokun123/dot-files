@@ -116,5 +116,5 @@ disabled = false
 style = "bold dimmed fg:#a3aed2"
 format = "[ $indicator]($style)"
 bash_indicator = "bash"
-powershell_indicator = "PowerShell"
-nu_indicator = "Nushell"
+powershell_indicator = "ps"
+nu_indicator = "nu"
