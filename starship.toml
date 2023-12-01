@@ -15,6 +15,7 @@ $rust\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [](fg:#1d2230)\
+$shell\
 $fill\
 $status$cmd_duration\
 \n\
@@ -109,3 +110,11 @@ symbol = ' '
 style = "bold dimmed fg:#a3aed2"
 ssh_only = false
 format = "[ $hostname]($style)"
+
+[shell]
+disabled = false
+style = "bold dimmed fg:#a3aed2"
+format = "[ $indicator]($style)"
+bash_indicator = "bash"
+powershell_indicator = "PowerShell"
+nu_indicator = "Nushell"
