@@ -41,6 +41,7 @@ let defalut_theme = {
     shape_datetime: cyan_bold
     shape_directory: cyan
     shape_external: cyan
+    shape_external_resolved: cyan_bold
     shape_externalarg: green_bold
     shape_filepath: cyan
     shape_flag: blue_bold
@@ -170,6 +171,7 @@ $env.config = {
     shell_integration: true # enables terminal shell integration. Off by default, as some terminals have issues with this.
     render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
     use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this
+    highlight_resolved_externals: true # true or false to enable or disable highlighting of resolved external commands
 
     hooks: {
         pre_prompt: [{ null }] # run before the prompt is shown
