@@ -43,7 +43,8 @@ Ubuntu = " "
 
 [directory]
 style = "fg:#e3e5e5 bg:#6084c9"
-format = "[ $path ]($style)"
+format = "[ ($read_only)$path ]($style)"
+read_only = " "
 truncation_length = 20
 truncation_symbol = "…/"
 
