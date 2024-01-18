@@ -40,6 +40,7 @@ Arch = " "
 Windows = "田 "
 Android = " "
 Ubuntu = "󰕈 "
+Debian = "󰣚 "
 
 [directory]
 style = "fg:#e3e5e5 bg:#6084c9"
