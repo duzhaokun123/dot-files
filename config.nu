@@ -194,7 +194,7 @@ $env.config = {
         # reset_application_mode is escape \x1b[?1l and was added to help ssh work better
         reset_application_mode: true
     }
-    render_right_prompt_on_last_line: false # true or false to enable or disable right prompt to be rendered on last line of the prompt.
+    render_right_prompt_on_last_line: true # true or false to enable or disable right prompt to be rendered on last line of the prompt.
     use_kitty_protocol: false # enables keyboard enhancement protocol implemented by kitty console, only if your terminal support this
     highlight_resolved_externals: true # true or false to enable or disable highlighting of resolved external commands
 
@@ -487,7 +487,8 @@ def style [style] {
 
 alias l = ls
 source ~/.cache/carapace/init.nu
-use ~/.cache/starship/init.nu
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 # custom config
 source ($nu.default-config-dir | path join custom.nu)
