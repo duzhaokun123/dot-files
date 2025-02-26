@@ -16,13 +16,13 @@ $rust\
 $time\
 [](fg:#1d2230)\
 $shell\
+$hostname\
 $fill\
 $status$cmd_duration\
 \n\
 $character"""
 
-right_format = """
-$sudo$hostname"""
+right_format = ""
 
 [username]
 show_always = true
