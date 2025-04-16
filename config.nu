@@ -150,7 +150,7 @@ $env.config = {
     }
 
     filesize: {
-        unit: "metric"
+        unit: "binary"
     }
 
     cursor_shape: {
