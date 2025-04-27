@@ -495,3 +495,6 @@ source ($nu.default-config-dir | path join custom.nu)
 
 # command not found handler
 source ($nu.default-config-dir | path join command_not_found_handler.nu)
+
+alias find = nufind
+hide find
