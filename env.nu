@@ -1,6 +1,7 @@
 $env.EDITOR = "vim"
 
 mkdir ~/.cache/carapace
+$env.CARAPACE_BRIDGES = "bash"
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 
 mkdir ~/.cache/starship
