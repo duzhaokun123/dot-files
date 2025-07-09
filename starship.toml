@@ -2,7 +2,14 @@ format = """
 [ ](fg:#a3aed2 bg:#a3aed2)\
 $os\
 $username\
-[](bg:#6084c9 fg:#a3aed2)\
+[](fg:#a3aed2 bg:#1d2230)\
+$time\
+[](fg:#1d2230)\
+$shell\
+$hostname\
+$fill\
+$cmd_duration\
+\n\
 $directory\
 [](fg:#6084c9 bg:#394260)\
 $git_branch\
@@ -13,12 +20,8 @@ $python\
 $nodejs\
 $rust\
 [](fg:#212736 bg:#1d2230)\
-$time\
-[](fg:#1d2230)\
-$shell\
-$hostname\
 $fill\
-$status$cmd_duration\
+$status\
 \n\
 $character"""
 
