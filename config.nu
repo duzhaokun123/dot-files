@@ -40,7 +40,7 @@ let defalut_theme = {
     shape_custom: green
     shape_datetime: cyan_bold
     shape_directory: cyan
-    shape_external: cyan
+    shape_external: red
     shape_external_resolved: cyan_bold
     shape_externalarg: green_bold
     shape_filepath: cyan
